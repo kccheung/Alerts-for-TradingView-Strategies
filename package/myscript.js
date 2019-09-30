@@ -164,7 +164,7 @@ function TradingViewStrategyMonitor()
 		var content = '\
 			<div id="'+mainID+'">\
 				<style>\
-				#TV_s_alert_container{position:fixed; bottom:10px; right:10px; background:pink; width:300px; display:flex; flex-direction:column; border:2px solid black; z-index:222; }\
+				#TV_s_alert_container{position:fixed; bottom:10px; right:10px; background:pink; width:260px; display:flex; flex-direction:column; border:2px solid black; z-index:222; }\
 				#TV_s_alert_container .modal-content{ padding:2px; width:99%;}\
 				#TV_s_alert_container .close { color:#aaa; float:right; font-size:28px; font-weight:bold; border:1px solid black; }\
 				</style>\
@@ -174,8 +174,7 @@ function TradingViewStrategyMonitor()
 					<B style="background:#e7e7e7; padding:1px; display: block;">Check the plot-colors to monitor for changes (from 0 to 1)</B>\
 					<div class="content"></div>\
 				  </div>\
-				  <div><input type="checkbox" id="use_mouseover_alerts" onchange="this_MAIN.enable_alert_on_mouseover_chart=this.checked;" />Enable when mouseover on chart</div>\
-				  <button class="myReload" onclick="this_MAIN.reFillCheckboxes();">Relist strategy names</button>\
+				  <div style="text-align:center;"><button class="myReload" onclick="this_MAIN.reFillCheckboxes();">Relist strategy names</button></div>\
 				</div>\
 				<button class="myBtn">SHOW/HIDE ALERTS WINDOW</button>\
 			</div>';
@@ -216,7 +215,7 @@ function TradingViewStrategyMonitor()
 				var rgb_color = itemValueElement.style.color.replace(/ /g, "");
 				var RGBs= rgb_color.replace(/[^\d,]/g, "").split(",");
 				var hexColor = this.rgbToHex( parseInt(RGBs[0]), parseInt(RGBs[1]), parseInt(RGBs[2]) );
-				checkboxes += '<input style="margin:1px; outline-offset:-4px; outline: 4px solid '+hexColor+';" type="checkbox" onchange="this_MAIN.TVSM_checkbox_changed(event)" name="'+studyName+'" plot="'+hexColor+'" />';
+				checkboxes += '• <input style="margin:1px; outline-offset:-4px; outline: 4px solid '+hexColor+';" type="checkbox" onchange="this_MAIN.TVSM_checkbox_changed(event)" name="'+studyName+'" plot="'+hexColor+'" />';
 			}
 		}
 		
